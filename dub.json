@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"uralg"
+	],
+	"copyright": "@UralGo inc. All rights reserved.",
+	"description": "A web framework for d lang.",
+	"license": "CC Attribution-ShareAlike ",
+	"name": "dweb"
+}
