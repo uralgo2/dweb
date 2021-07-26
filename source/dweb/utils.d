@@ -91,6 +91,18 @@ public class Response{
 		this.Body ~= this.server.view_engine.render(data);
 		this.send();
 	}
+	public void frender(string filename, Options options = null){
+		if(options !is null)
+			this.server.view_engine.setOptions(options);
+		auto f = File(filename, "r");
+		
+		string str;
+		f.readf!"%s"(str);
+		f.close();
+
+		this.Body ~= this.server.view_engine.render(str);
+		this.send();
+	}
 }
 public struct Header{
 	string Name;
