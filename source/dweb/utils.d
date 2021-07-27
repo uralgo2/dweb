@@ -38,7 +38,7 @@ public class Response{
 	public void setStatus(int status){
 		this.Status = status.to!string();
 	}
-	public void text(string val){
+	public void write(string val){
 		this.Body ~= val;
 	}
 	public void fhtml(string name){
@@ -89,7 +89,6 @@ public class Response{
 		if(options !is null)
 			this.server.view_engine.setOptions(options);
 		this.Body ~= this.server.view_engine.render(data);
-		this.send();
 	}
 	public void frender(string filename, Options options = null){
 		if(options !is null)
@@ -101,7 +100,6 @@ public class Response{
 		f.close();
 
 		this.Body ~= this.server.view_engine.render(str);
-		this.send();
 	}
 }
 public struct Header{
